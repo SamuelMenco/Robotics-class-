@@ -226,9 +226,6 @@ def main() -> None:
     corrected_poses = optimize_pose_graph(poses, edges, measurements, n_iter=20)
 
     save_slam_poses(corrected_poses, fnum=30)
-    print(poses)
-    print(corrected_poses)
-    print(len(corrected_poses))
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6), sharex=True, sharey=True)
     plot_all_scans_world(scans, poses, "Scan Matching", ax1)
     plot_all_scans_world(scans, corrected_poses, "PGO", ax2)
