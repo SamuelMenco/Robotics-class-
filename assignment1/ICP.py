@@ -191,6 +191,7 @@ def compute_results():
     
 
 def main() -> None:
+    """
     scans = load_scans(file_name)
     print(f"Loaded {len(scans)} scans from {file_name}")
     if len(scans) > 1:
@@ -204,7 +205,6 @@ def main() -> None:
         print(R_total)
         print(f"angle: {np.arctan2(R_total[1, 0], R_total[0, 0])}")
         print(t_total)
-        """
 
  
         results = forward_pass(scans)
@@ -214,7 +214,7 @@ def main() -> None:
         #print(f"{len(world_transforms)} transforms computed in total")
         #_,_,error_list = icp(scans[1],scans[0])
         #print(error_list)
-         """
+    """
 
 
 
