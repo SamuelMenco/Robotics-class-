@@ -224,6 +224,7 @@ def main() -> None:
     )
     measurements = np.vstack([edge_z, lc_z]) if lc_z.shape[0] > 0 else edge_z
     corrected_poses = optimize_pose_graph(poses, edges, measurements, n_iter=20)
+
     save_slam_poses(corrected_poses, fnum=30)
     print(poses)
     print(corrected_poses)
@@ -235,8 +236,7 @@ def main() -> None:
     plt.tight_layout()
     plt.savefig("robot_environment_map_sim_25.png", dpi=300)
     plt.show()
-
-
+    
 
 
 if __name__ == "__main__":
