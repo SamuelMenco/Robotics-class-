@@ -28,7 +28,7 @@ def main()-> None:
         poses=world_poses,
         min_sep=10,
         max_dist=2,
-        max_angle_deg=45.0,
+        max_angle_deg=90.0,
         max_loops_per_edge=5,
     )
     

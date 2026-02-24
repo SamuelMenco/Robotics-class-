@@ -11,6 +11,7 @@ def load_npz_as_array(path):
 def plot_estimated(est, title, out_path):
     plt.figure()
     plt.plot(est[:, 0], est[:, 1], label="Estimated")
+    plt.plot(gt[:, 0], gt[:, 1], label="Estimated")
     plt.xlabel("x (m)")
     plt.ylabel("y (m)")
     plt.title(title)
@@ -23,4 +24,5 @@ def plot_estimated(est, title, out_path):
 
 if __name__ == "__main__":
     est = load_npz_as_array("sim_25_slam.npz")
+    gt = load_npz_as_array("sim_25_poses.npz")
     plot_estimated(est, "Estimated robot trajectory", "estimated_trajectory.png")

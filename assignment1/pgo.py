@@ -223,7 +223,7 @@ def main() -> None:
         else np.zeros((0, 3))
     )
     measurements = np.vstack([edge_z, lc_z]) if lc_z.shape[0] > 0 else edge_z
-    corrected_poses = optimize_pose_graph(poses, edges, measurements, n_iter=20)
+    corrected_poses = optimize_pose_graph(poses, edges, measurements, n_iter=100)
 
     save_slam_poses(corrected_poses, fnum=30)
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6), sharex=True, sharey=True)
